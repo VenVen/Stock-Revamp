@@ -315,3 +315,4 @@ ren "GameData\Squad\Parts\Utility\sensorThermometer\lense.mbm" *.mbmbak
 ren "GameData\Squad\Parts\Utility\sensorThermometer\model.mu" *.mubak
 ren "GameData\Squad\Parts\Utility\sensorThermometer\Therm-CLR.mbm" *.mbmbak
 ren "GameData\Squad\SPP\Wings\Wings.mbm" *.mbmbak
+copy "GameData\VenStockRevamp\Squad\Parts\Electrical\radialFlatSolarPanel\model000.mbm" "GameData\Squad\SPP\Wings\Wings.mbm"

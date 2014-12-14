@@ -316,3 +316,4 @@ mv GameData/Squad/Parts/Utility/sensorThermometer/lense.mbm GameData/Squad/Parts
 mv GameData/Squad/Parts/Utility/sensorThermometer/model.mu GameData/Squad/Parts/Utility/sensorThermometer/model.mubak
 mv GameData/Squad/Parts/Utility/sensorThermometer/Therm-CLR.mbm GameData/Squad/Parts/Utility/sensorThermometer/Therm-CLR.mbmbak
 mv GameData/Squad/SPP/Wings/Wings.mbm GameData/Squad/SPP/Wings/Wings.mbmbak
+cp GameData/VenStockRevamp/Squad/Parts/Electrical/radialFlatSolarPanel/model000.mbm GameData/Squad/SPP/Wings/Wings.mbm
