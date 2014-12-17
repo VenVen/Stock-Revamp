@@ -315,5 +315,19 @@ mv GameData/Squad/Parts/Utility/sensorGravimeter/model000.mbm GameData/Squad/Par
 mv GameData/Squad/Parts/Utility/sensorThermometer/lense.mbm GameData/Squad/Parts/Utility/sensorThermometer/lense.mbmbak
 mv GameData/Squad/Parts/Utility/sensorThermometer/model.mu GameData/Squad/Parts/Utility/sensorThermometer/model.mubak
 mv GameData/Squad/Parts/Utility/sensorThermometer/Therm-CLR.mbm GameData/Squad/Parts/Utility/sensorThermometer/Therm-CLR.mbmbak
+
+mv GameData/Squad/Parts/Engine/liquidEngine24-77/model.mu GameData/Squad/Parts/Engine/liquidEngine24-77/model.mu.mubak
+mv GameData/Squad/Parts/Engine/liquidEngine24-77/model000.mbm GameData/Squad/Parts/Engine/liquidEngine24-77/model000.mbmbak
+
+mv GameData/Squad/Parts/Engine/liquidEngine48-7S/model.mu GameData/Squad/Parts/Engine/liquidEngine48-7S/model.mubak
+mv GameData/Squad/Parts/Engine/liquidEngine48-7S/ksp_m_liquidEngine_diff.mbm GameData/Squad/Parts/Engine/liquidEngine48-7S/ksp_m_liquidEngine_diff.mbmbak
+mv GameData/Squad/Parts/Engine/liquidEngine48-7S/ksp_m_liquidEngine_norm.mbm GameData/Squad/Parts/Engine/liquidEngine48-7S/ksp_m_liquidEngine_norm.mbmbak
+mv GameData/Squad/Parts/Engine/liquidEngine48-7S/ksp_m_liquidFuelEngine_fairing_norm.mbm GameData/Squad/Parts/Engine/liquidEngine48-7S/ksp_m_liquidFuelEngine_fairing_norm.mbmbak
+mv GameData/Squad/Parts/Engine/liquidEngine48-7S/ksp_m_liquidFuelEngine_fairing_psd.mbm GameData/Squad/Parts/Engine/liquidEngine48-7S/ksp_m_liquidFuelEngine_fairing_psd.mbmbak
+
+mv GameData/Squad/Parts/Engine/liquidEngineLV-1/model.mu GameData/Squad/Parts/Engine/liquidEngineLV-1/model.mubak
+mv GameData/Squad/Parts/Engine/liquidEngineLV-1/model000.mbm GameData/Squad/Parts/Engine/liquidEngineLV-1/model000.mbmbak
+mv GameData/Squad/Parts/Engine/liquidEngineLV-1/model001.mbm GameData/Squad/Parts/Engine/liquidEngineLV-1/model001.mbmbak
+
 mv GameData/Squad/SPP/Wings/Wings.mbm GameData/Squad/SPP/Wings/Wings.mbmbak
-cp GameData/VenStockRevamp/Squad/Parts/Electrical/radialFlatSolarPanel/model000.mbm GameData/Squad/SPP/Wings/Wings.mbm
+cp GameData/VenStockRevamp/Blank.mbm GameData/Squad/SPP/Wings/Wings.mbm

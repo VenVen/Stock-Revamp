@@ -314,5 +314,19 @@ ren "GameData\Squad\Parts\Utility\sensorGravimeter\model000.mbm" *.mbmbak
 ren "GameData\Squad\Parts\Utility\sensorThermometer\lense.mbm" *.mbmbak
 ren "GameData\Squad\Parts\Utility\sensorThermometer\model.mu" *.mubak
 ren "GameData\Squad\Parts\Utility\sensorThermometer\Therm-CLR.mbm" *.mbmbak
+
+ren "GameData\Squad\Parts\Engine\liquidEngine24-77\model.mu" *.mubak
+ren "GameData\Squad\Parts\Engine\liquidEngine24-77\model000.mbm" *.mbmbak
+
+ren "GameData\Squad\Parts\Engine\liquidEngine48-7S\model.mu" *.mubak
+ren "GameData\Squad\Parts\Engine\liquidEngine48-7S\ksp_m_liquidEngine_diff.mbm" *.mbmbak
+ren "GameData\Squad\Parts\Engine\liquidEngine48-7S\ksp_m_liquidEngine_norm.mbm" *.mbmbak
+ren "GameData\Squad\Parts\Engine\liquidEngine48-7S\ksp_m_liquidFuelEngine_fairing_norm.mbm" *.mbmbak
+ren "GameData\Squad\Parts\Engine\liquidEngine48-7S\ksp_m_liquidFuelEngine_fairing_psd.mbm" *.mbmbak
+
+ren "GameData\Squad\Parts\Engine\liquidEngineLV-1\model.mu" *.mubak
+ren "GameData\Squad\Parts\Engine\liquidEngineLV-1\model000.mbm" *.mbmbak
+ren "GameData\Squad\Parts\Engine\liquidEngineLV-1\model001.mbm" *.mbmbak
+
 ren "GameData\Squad\SPP\Wings\Wings.mbm" *.mbmbak
-copy "GameData\VenStockRevamp\Squad\Parts\Electrical\radialFlatSolarPanel\model000.mbm" "GameData\Squad\SPP\Wings\Wings.mbm"
+copy "GameData\VenStockRevamp\Blank.mbm" "GameData\Squad\SPP\Wings\Wings.mbm"
