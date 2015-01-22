@@ -144,6 +144,8 @@ mv "GameData/Squad/Parts/Structural/structuralIBeam650/model.mu" "GameData/Squad
 mv "GameData/Squad/Parts/Structural/structuralIBeam650/model000.mbm" "GameData/Squad/Parts/Structural/structuralIBeam650/model000.mbm.bak"
 mv "GameData/Squad/Parts/Structural/structuralIBeam200Pocket/model.mu" "GameData/Squad/Parts/Structural/structuralIBeam200Pocket/model.mu.bak"
 mv "GameData/Squad/Parts/Structural/structuralIBeam200Pocket/model000.mbm" "GameData/Squad/Parts/Structural/structuralIBeam200Pocket/model000.mbm.bak"
+mv "GameData/Squad/Parts/Structural/adapterSmallMiniTall/model.mu" "GameData/Squad/Parts/Structural/adapterSmallMiniTall/model.mu.bak"
+mv "GameData/Squad/Parts/Structural/adapterSmallMiniTall/ksp_s_adapterLong_diff.mbm" "GameData/Squad/Parts/Structural/adapterSmallMiniTall/ksp_s_adapterLong_diff.mbm.bak"
 mv "GameData/Squad/Parts/FuelTank/fuelTankOscarB/model.mu" "GameData/Squad/Parts/FuelTank/fuelTankOscarB/model.mu.bak"
 mv "GameData/Squad/Parts/FuelTank/fuelTankOscarB/model000.mbm" "GameData/Squad/Parts/FuelTank/fuelTankOscarB/model000.mbm.bak"
 mv "GameData/Squad/Parts/FuelTank/fuelTankOscarB/model001.mbm" "GameData/Squad/Parts/FuelTank/fuelTankOscarB/model001.mbm.bak"
