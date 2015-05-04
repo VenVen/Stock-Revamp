@@ -33,12 +33,11 @@ var stockPaths = {};
 var numCfgs = 0; // the number of .cfg files that have been sent off for parsing and haven't come back yet
 if (doPartStock) {
   populateCfgs(path.join('GameData', 'Squad', 'Parts'));
-  populateCfgs(path.join('GameData', 'Squad', 'SPP'));
-  populateCfgs(path.join('GameData', 'NASAmission', 'Parts'));
+  //populateCfgs(path.join('GameData', 'Squad', 'SPP'));
+  //populateCfgs(path.join('GameData', 'NASAmission', 'Parts'));
   fs.writeFile('pathCache.json', JSON.stringify(stockPaths), function (err) { // Write the file async
     if (!err) console.log('pathCache.json written.'); else throw err;
   });
-  //console.log(stockPaths);
 } else {
   try {
     stockCfgs = JSON.parse(fs.readFileSync('cfgCache.json'));
@@ -74,7 +73,7 @@ function populateCfgs(pathname) {
             if (doPartVen) partVen(); // once we run out of cfg files to parse move onto Vens part
           }
         });
-      } else if (/\.(?:mu|mbm|tga|png)$/.test(path.extname(filename))) {
+      } else if (/\.(?:mu|mbm|tga|png|dds)$/.test(path.extname(filename))) {
         if (!stockPaths[pathname]) stockPaths[pathname] = [];
         stockPaths[pathname].push(filename);
       }
@@ -84,32 +83,43 @@ function populateCfgs(pathname) {
 
 // Parses the Part Revamp-MM.cfg file for part names and associates them with vens models and stock models
 function partVen() {
-  var fullPath = path.join('GameData', 'VenStockRevamp', 'Part Revamp-MM.cfg');
-  var venCfgs = {};
-  fs.readFile(fullPath, function (err, buf) { // read the file async
-    if (!err && buf.toString()) { // QUERY: should this throw an exception?
-      buf.toString().match(/^@PART\[.+?\][\s\S]*?model = .+?$/gm).forEach(function (subbuf) { // find all part name and model path pairs
-        var arr = subbuf.match(/^@PART\[(.+?)\][\s\S]*?model = (.+?)$/); // pick out the name and path
-        venCfgs[arr[1]] = {}; // add an entry to venCfgs using the part name as the index and storing vens model path and the stock model path
-        venCfgs[arr[1]].venmodel = arr[2];
-        if (!path.extname(stockCfgs[arr[1]].mesh)) { // model = style
-          venCfgs[arr[1]].stockmodel = stockCfgs[arr[1]].mesh;
-        } else { // mesh = style
-          // reconstruct stock model path from pathname and mesh
-          var tmpPath = path.relative('GameData', stockCfgs[arr[1]].pathname); // remove GameData from the front of the path
-          tmpPath = path.join(tmpPath, path.basername(stockCfgs[arr[1]].mesh)); // add the mesh filename (without extension) to the end of the path
-          venCfgs[arr[1]].stockmodel = path.rejoin(tmpPath, '/'); // use / as the seperator
-        }
-        venCfgs[arr[1]].stockpath = path.join('GameData', path.dirname(venCfgs[arr[1]].stockmodel)); // reconstruct the path to the stock model directory to be appropriate to the platform
-      });
-    }
-    makePathPatches(venCfgs);
-    makePrune(venCfgs);
+  var fullPaths = [ path.join('GameData', 'VenStockRevamp', 'Squad', 'Parts', 'Aero.cfg'),
+                    path.join('GameData', 'VenStockRevamp', 'Squad', 'Parts', 'Command.cfg'),
+                    path.join('GameData', 'VenStockRevamp', 'Squad', 'Parts', 'Decouplers', 'Decouplers.cfg'),
+                    path.join('GameData', 'VenStockRevamp', 'Squad', 'Parts', 'Eletrical.cfg'),
+                    path.join('GameData', 'VenStockRevamp', 'Squad', 'Parts', 'Engines.cfg'),
+                    path.join('GameData', 'VenStockRevamp', 'Squad', 'Parts', 'FuelTanks.cfg'),
+                    path.join('GameData', 'VenStockRevamp', 'Squad', 'Parts', 'Structural.cfg'),
+                    path.join('GameData', 'VenStockRevamp', 'Squad', 'Parts', 'Utility.cfg') ];
+  fullPaths.forEach(function (fullPath) {
+    var venCfgs = {};
+    fs.readFile(fullPath, function (err, buf) { // read the file async
+      if (!err && buf.toString()) { // QUERY: should this throw an exception?
+        buf.toString().match(/^@PART\[.+?\][\s\S]*?(?:model|texture) = .+?$/gm).forEach(function (subbuf) { // find all part name and model path pairs
+          var arr = subbuf.match(/^@PART\[(.+?)\][\s\S]*?(model|texture) = (.+?)$/); // pick out the name and path
+          if (arr[2] != "texture") {
+            venCfgs[arr[1]] = {}; // add an entry to venCfgs using the part name as the index and storing vens model path and the stock model path
+            venCfgs[arr[1]].venmodel = arr[3];
+            if (!path.extname(stockCfgs[arr[1]].mesh)) { // model = style
+              venCfgs[arr[1]].stockmodel = stockCfgs[arr[1]].mesh;
+            } else { // mesh = style
+              // reconstruct stock model path from pathname and mesh
+              var tmpPath = path.relative('GameData', stockCfgs[arr[1]].pathname); // remove GameData from the front of the path
+              tmpPath = path.join(tmpPath, path.basername(stockCfgs[arr[1]].mesh)); // add the mesh filename (without extension) to the end of the path
+              venCfgs[arr[1]].stockmodel = path.rejoin(tmpPath, '/'); // use / as the seperator
+            }
+            venCfgs[arr[1]].stockpath = path.join('GameData', path.dirname(venCfgs[arr[1]].stockmodel)); // reconstruct the path to the stock model directory to be appropriate to the platform
+          }
+        });
+      }
+      makePathPatches(venCfgs, path.join(path.dirname(fullPath), path.basername(fullPath) + '-PathPatches.cfg'));
+      makePrune(venCfgs, path.basername(fullPath));
+    });
   });
 }
 
 // Write Part Revamp-PathPatches.cfg containing the MM patches to redirect other mods that use the stock models
-function makePathPatches(cfgs) {
+function makePathPatches(cfgs, fullPath) {
   var buf = '@PART[*]:FINAL {\n';
   Object.keys(cfgs).forEach(function (key) {
     buf += '\t@MODEL,* {\n';
@@ -117,13 +127,13 @@ function makePathPatches(cfgs) {
     buf += '\t}\n';
   });
   buf += '}';
-  fs.writeFile('Part Revamp-PathPatches.cfg', buf, function (err) { // write the file async
-    if (!err) console.log('Part Revamp-PathPatches.cfg written.'); else throw err;
+  fs.writeFile(fullPath, buf, function (err) { // write the file async
+    if (!err) console.log(fullPath + ' written.'); else throw err;
   }); // QUERY: add a line to redirect the spp wings texture?
 }
 
 // Write prune and unprune shell scripts for windows and linux to clean up stock models and textures
-function makePrune(cfgs) {
+function makePrune(cfgs, base) {
   var out = []; // array of files that are safe to prune
   var pathClean = {};
   Object.keys(cfgs).forEach(function (key) { // find model and texture files in every directory that cfgs.stockmodel refers to
@@ -131,11 +141,10 @@ function makePrune(cfgs) {
       pathClean[cfgs[key].stockpath] = {};
       pathClean[cfgs[key].stockpath].models = [];
       pathClean[cfgs[key].stockpath].textures = [];
-      //fs.readdirSync(cfgs[key].stockpath).forEach(function (filename) {
       stockPaths[cfgs[key].stockpath].forEach(function (filename) { // QUERY: will this break on platform change?
         if (/\.mu$/.test(path.extname(filename))) { // models are .mu
           pathClean[cfgs[key].stockpath].models.push(filename);
-        } else if (/\.(?:mbm|tga|png)$/.test(path.extname(filename))) { // textures are .mbm .tga .png
+        } else if (/\.(?:mbm|tga|png|dds)$/.test(path.extname(filename))) { // textures are .mbm .tga .png .dds
           pathClean[cfgs[key].stockpath].textures.push(filename);
         }
       });
@@ -162,16 +171,21 @@ function makePrune(cfgs) {
   var bufUS = '#!/bin/sh\n';
   var bufAP = '';
   out.forEach(function (filename) {
-    bufPB += 'ren "' + path.rejoin(filename, '\\') + '" "' + path.basename(filename) + '.bak"\r\n';
-    bufUB += 'ren "' + path.rejoin(filename, '\\') + '.bak" "' + path.basename(filename) + '"\r\n';
-    bufPS += 'mv "' + path.rejoin(filename, '/') + '" "' + path.rejoin(filename, '/') + '.bak"\n';
-    bufUS += 'mv "' + path.rejoin(filename, '/') + '.bak" "' + path.rejoin(filename, '/') + '"\n';
+    bufPB += 'ren "' + path.rejoin('../' + filename, '\\') + '" "' + path.basename(filename) + '.bak"\r\n';
+    bufUB += 'ren "' + path.rejoin('../' + filename, '\\') + '.bak" "' + path.basename(filename) + '"\r\n';
+    bufPS += 'mv "' + path.rejoin('../' + filename, '/') + '" "' + path.rejoin('../' + filename, '/') + '.bak"\n';
+    bufUS += 'mv "' + path.rejoin('../' + filename, '/') + '.bak" "' + path.rejoin('../' + filename, '/') + '"\n';
     bufAP += path.rejoin(path.relative('GameData', filename), '/') + '\n';
   });
   // write the files async
-  fs.writeFile('prune.bat', bufPB, function (err) { if (err) throw err; else console.log('prune.bat written.');});
-  fs.writeFile('unprune.bat', bufUB, function (err) { if (err) throw err; else console.log('unprune.bat written.');});
-  fs.writeFile('prune.sh', bufPS, function (err) { if (err) throw err; else console.log('prune.sh written.');});
-  fs.writeFile('unprune.sh', bufUS, function (err) { if (err) throw err; else console.log('unprune.sh written.');});
-  fs.writeFile('VSR.prnl', bufAP, function (err) { if (err) throw err; else console.log('VSR.prnl written.');});
+  try {
+    if (!fs.statSync('pruners').isDirectory()) throw "'pruners' must be a directory."; // validate that the directory 'pruners' exists
+  } catch (e) {
+    fs.mkdirSync('pruners');
+  }
+  fs.writeFile(path.join('pruners', base + '-prune.bat'), bufPB, function (err) { if (err) throw err; else console.log(base + '-prune.bat written.');});
+  fs.writeFile(path.join('pruners', base + '-unprune.bat'), bufUB, function (err) { if (err) throw err; else console.log(base + '-unprune.bat written.');});
+  fs.writeFile(path.join('pruners', base + '-prune.sh'), bufPS, function (err) { if (err) throw err; else console.log(base + '-prune.sh written.');});
+  fs.writeFile(path.join('pruners', base + '-unprune.sh'), bufUS, function (err) { if (err) throw err; else console.log(base + '-unprune.sh written.');});
+  fs.writeFile(path.join('pruners', base + '-VSR.prnl'), bufAP, function (err) { if (err) throw err; else console.log(base + '-VSR.prnl written.');});
 }
