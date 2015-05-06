@@ -5,9 +5,12 @@ NOTE: Close all solar panels in-game before quitting and installing!
 
 INSTALL:
 Drop the stuff inside the GameData folder into your KSP/GameData folder
-Windows: Drop the .bat file in KSP and run it to disable the loading of replaced Squad assets (save RAM!).
-OS X / Linux: Drop the .sh file in KSP and run it to disable the loading of replaced Squad assets (save RAM!).
 
-To restore the removed parts, run the provided VSR_UNprune.bat (or VSR_UNprune.sh if you use OS X / Linux).
+If you want to save RAM, drag and drop the 'Pruners' folder into your KSP directory. Enter that folder and run all of the .bat (.sh for OS X/ Linux) files. 
 
-As of 1.8, there is no prune files, but they will be added shortly after release.
+If you want to use the stock parts again, install the Un-pruner folder into your KSP and run all of the batch files inside.
+
+You can run as many or as few of the pruner files if you wish.
+
+WARNING! By using any of the provided pruners, mods that re-use stock assets (IE: Stock Extended), Will likely break or be textureless. 
+
