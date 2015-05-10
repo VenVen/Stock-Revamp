@@ -1,0 +1,11 @@
+//Change .txt to .cfg to let you reset your solar panels//
+@PART[solarPanels4] {
+	@MODULE[ModuleDeployableSolarPanel] {
+		@retractable = true
+	}
+}
+@PART[solarPanels3] {
+	@MODULE[ModuleDeployableSolarPanel] {
+		@retractable = true
+	}
+}
