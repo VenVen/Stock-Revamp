@@ -1,10 +1,10 @@
 //Change .txt to .cfg to let you reset your solar panels//
-@PART[solarPanels4] {
+@PART[solarPanels4]:FOR[VenStockRevamp] {
 	@MODULE[ModuleDeployableSolarPanel] {
 		@retractable = true
 	}
 }
-@PART[solarPanels3] {
+@PART[solarPanels3]:FOR[VenStockRevamp] {
 	@MODULE[ModuleDeployableSolarPanel] {
 		@retractable = true
 	}
