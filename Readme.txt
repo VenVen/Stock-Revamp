@@ -1,7 +1,5 @@
 Ven's Stock Part Revamp
-v1.8.0
-
-NOTE: Close all solar panels in-game before quitting and installing!
+v1.9.0
 
 INSTALL:
 Drop the stuff inside the GameData folder into your KSP/GameData folder
@@ -13,4 +11,3 @@ If you want to use the stock parts again, install the Un-pruner folder into your
 You can run as many or as few of the pruner files if you wish.
 
 WARNING! By using any of the provided pruners, mods that re-use stock assets (IE: Stock Extended), Will likely break or be textureless. 
-

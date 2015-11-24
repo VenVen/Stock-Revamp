@@ -1,0 +1,21 @@
+//HightBypassJet
+
+Top attach node = 1.106668
+thrustTransform = thrustTransform
+Nozzle Gimble object = nozzelring
+Emmissive Animation = HeatAnimationEmmissiveTurbofan
+Nozzle petals animation = ThrustAnimation
+
+//TurboJet
+
+Top attach node = 1.107961
+thrustTransform = thrustTransform
+Emmissive Animation = TurbojetHeat
+Nozzle petals animation = TurboJetThrustAnimation
+
+//BasicJet 
+
+Top attach node = 0.7775583
+thrustTransform = thrustTransform
+Nozzle Gimble object = thrustTransform
+Emmissive Animation = HeatAnimationEmmissiveJet

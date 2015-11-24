@@ -1,0 +1,18 @@
+//350
+
+Top attach (Y) = 0.2304848
+bottom attach (Y) = -0.7937307
+Heat Emmissive = AerobeeEmmissive
+Fairing = fairing
+thrustTransform = thrustTransform
+smokePoint = smokePoint
+
+//150
+
+Top attach (Y) = 0.2304848
+bottom attach (Y) = -0.7937307
+Heat Emmissive = AerobeeEmmissive
+Fairing = fairing
+thrustTransform = thrustTransform
+
+Note: Both are designed to have objects radially attached to them, excluding their bottoms, they are set to noAttach currently.
