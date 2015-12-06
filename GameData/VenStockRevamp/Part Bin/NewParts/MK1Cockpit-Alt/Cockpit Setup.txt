@@ -1,0 +1,4 @@
+Bottom Attach node = 0.0,-0.1486374,0.0
+Cabin light animation = MK1Light
+FlagTransform = flagTransform
+Window Panel (for reflections) = Shine
