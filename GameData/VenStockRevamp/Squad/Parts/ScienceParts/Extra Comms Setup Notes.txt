@@ -1,0 +1,5 @@
+*All nodes and scales should be 0,0,0 and 1,1,1 respectively. Parts are inside: VenStockRevamp/Squad/Parts/ScienceParts/
+LargeFixedAntenna: a large 2.5m to ~3.75m fixed antenna.*
+MediumFixedAntenna: a medium 1.25m to ~2.5m fixed antenna*
+SmallFixedAntenna: a small 0.625m to ~1.25m fixed antenna*
+LongAntenna: a long, deployable antenna. ~1.25m wide and ~2.6m long. Part origin is set within the antenna's base. Animations: LongAntennaDeploy (deployment animation), LongAntennaTransmitPulse (transmission blink).*
