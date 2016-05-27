@@ -1,16 +1,10 @@
-Squad/Parts/Aero/cones/TinyCone.mu
-Squad/Parts/Aero/airplaneFins/AdvCanard.mu
 Squad/Parts/Aero/wingletAV-T1/model.mu
 Squad/Parts/Aero/wingletAV-T1/model000.dds
 Squad/Parts/Aero/wingletAV-T1/model001.dds
 Squad/Parts/Aero/aerodynamicNoseCone/model.mu
 Squad/Parts/Aero/aerodynamicNoseCone/Nosecone.dds
-Squad/Parts/Aero/cones/NCS.mu
 Squad/Parts/Aero/protectiveRocketNoseMk7/model.mu
 Squad/Parts/Aero/protectiveRocketNoseMk7/model000.dds
-Squad/Parts/Aero/airplaneFins/Canard.mu
-Squad/Parts/Aero/cones/TailA.mu
-Squad/Parts/Aero/airplaneFins/TailFin.mu
 Squad/Parts/Aero/wingletAV-R8/model.mu
 Squad/Parts/Aero/wingletAV-R8/model000.dds
 Squad/Parts/Aero/wingletAV-R8/model001.dds
@@ -28,9 +22,6 @@ Squad/Parts/Utility/stackQuadCoupler/model.mu
 Squad/Parts/Utility/stackQuadCoupler/ksp_s_quadCoupler_diff.dds
 Squad/Parts/Utility/stackBiCoupler/model.mu
 Squad/Parts/Utility/stackBiCoupler/model000.dds
-Squad/Parts/Aero/cones/ConeA.mu
-Squad/Parts/Aero/cones/ConeB.mu
-Squad/Parts/Aero/cones/TailB.mu
 Squad/Parts/Aero/basicFin/basicFin.mu
 Squad/Parts/Aero/basicFin/BasicFin.dds
 Squad/Parts/Aero/fairings/fairingSize1.mu
