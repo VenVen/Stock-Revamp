@@ -1,14 +1,3 @@
-Squad/Parts/Aero/airIntakeRadialXM-G50/model.mu
-Squad/Parts/Aero/airIntakeRadialXM-G50/model000.dds
-Squad/Parts/Aero/ramAirIntake/RampIntake.mu
-Squad/Parts/Aero/ramAirIntake/RampIntake.dds
-Squad/Parts/Utility/landingLegLT-2/model.mu
-Squad/Parts/Utility/landingLegLT-2/landingLeg.dds
-Squad/Parts/Utility/landingLegLT-1/model.mu
-Squad/Parts/Utility/landingLegLT-1/ksp_r_landingStrut_diff.dds
-Squad/Parts/Utility/landingLegLT-5/model.mu
-Squad/Parts/Utility/landingLegLT-5/leg.dds
-Squad/Parts/Utility/landingLegLT-5/model000.dds
 Squad/Parts/Utility/parachuteMk2-R/model.mu
 Squad/Parts/Utility/parachuteMk2-R/model000.dds
 Squad/Parts/Utility/parachuteMk2-R/model001.dds
@@ -27,7 +16,6 @@ Squad/Parts/Utility/parachuteMk12-R/model001.dds
 Squad/Parts/Science/LargeCrewedLab/large_crewed_lab.mu
 Squad/Parts/Science/LargeCrewedLab/Large_Crewed_Lab.dds
 Squad/Parts/Science/LargeCrewedLab/window.dds
-Squad/Parts/Aero/cones/AvioCone.mu
 Squad/Parts/Utility/commsDish16/model.mu
 Squad/Parts/Utility/commsDish16/model000.dds
 Squad/Parts/Science/sensorAccelerometer/model.mu
