@@ -46,6 +46,7 @@ mv "../GameData/Squad/Parts/Structural/adapterSmallMiniTall/model.mu" "../GameDa
 mv "../GameData/Squad/Parts/Structural/adapterSmallMiniTall/ksp_s_adapterLong_diff.dds" "../GameData/Squad/Parts/Structural/adapterSmallMiniTall/ksp_s_adapterLong_diff.dds.bak"
 mv "../GameData/Squad/Parts/Utility/ladderRadial/model.mu" "../GameData/Squad/Parts/Utility/ladderRadial/model.mu.bak"
 mv "../GameData/Squad/Parts/Utility/ladderRadial/model000.dds" "../GameData/Squad/Parts/Utility/ladderRadial/model000.dds.bak"
+mv "../GameData/Squad/Parts/Aero/HeatShield/HeatShield0.mu" "../GameData/Squad/Parts/Aero/HeatShield/HeatShield0.mu.bak"
 mv "../GameData/Squad/Parts/Aero/HeatShield/HeatShield1.mu" "../GameData/Squad/Parts/Aero/HeatShield/HeatShield1.mu.bak"
 mv "../GameData/Squad/Parts/Aero/HeatShield/HeatShield2.mu" "../GameData/Squad/Parts/Aero/HeatShield/HeatShield2.mu.bak"
 mv "../GameData/Squad/Parts/Aero/HeatShield/HeatShield3.mu" "../GameData/Squad/Parts/Aero/HeatShield/HeatShield3.mu.bak"

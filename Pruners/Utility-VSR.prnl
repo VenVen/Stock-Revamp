@@ -18,6 +18,13 @@ Squad/Parts/Science/LargeCrewedLab/Large_Crewed_Lab.dds
 Squad/Parts/Science/LargeCrewedLab/window.dds
 Squad/Parts/Utility/commsDish16/model.mu
 Squad/Parts/Utility/commsDish16/model000.dds
+Squad/Parts/Utility/commsAntennaDTS-M1/mediumDishAntenna.dds
+Squad/Parts/Utility/commsAntennaDTS-M1/mediumDishAntenna.mu
+Squad/Parts/Utility/commsAntennaDTS-M1/mediumDishAntenna_Emit.dds
+Squad/Parts/Utility/RelayAntennas/DishAntenna.dds
+Squad/Parts/Utility/RelayAntennas/RA-5.mu
+Squad/Parts/Utility/RelayAntennas/RA-50.mu
+Squad/Parts/Utility/RelayAntennas/RA-100.mu
 Squad/Parts/Science/sensorAccelerometer/model.mu
 Squad/Parts/Science/sensorAccelerometer/model000.dds
 Squad/Parts/Science/sensorBarometer/model.mu
