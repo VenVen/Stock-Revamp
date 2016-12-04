@@ -46,6 +46,7 @@ ren "..\GameData\Squad\Parts\Structural\adapterSmallMiniTall\model.mu.bak" "mode
 ren "..\GameData\Squad\Parts\Structural\adapterSmallMiniTall\ksp_s_adapterLong_diff.dds.bak" "ksp_s_adapterLong_diff.dds"
 ren "..\GameData\Squad\Parts\Utility\ladderRadial\model.mu.bak" "model.mu"
 ren "..\GameData\Squad\Parts\Utility\ladderRadial\model000.dds.bak" "model000.dds"
+ren "..\GameData\Squad\Parts\Aero\HeatShield\HeatShield0.mu.bak" "HeatShield0.mu"
 ren "..\GameData\Squad\Parts\Aero\HeatShield\HeatShield1.mu.bak" "HeatShield1.mu"
 ren "..\GameData\Squad\Parts\Aero\HeatShield\HeatShield2.mu.bak" "HeatShield2.mu"
 ren "..\GameData\Squad\Parts\Aero\HeatShield\HeatShield3.mu.bak" "HeatShield3.mu"
