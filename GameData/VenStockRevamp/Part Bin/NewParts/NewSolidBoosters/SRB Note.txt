@@ -1,1 +1,0 @@
-Use MODEL{} to attach the SRB cap at the top attach node.
